@@ -405,13 +405,17 @@ function requestSimilarUrl(name) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
+const WHATSAPP_GLYPH =
+  '<svg class="product-card__request-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.560 6.560 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.560 6.560 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>';
+
 /* ---------- Product grid rendering (shared by home + shop) ----------------
    DATA CONTRACT (docs and PROJECT root CLAUDE.md): {id, name, subtitle,
    price|null, unit, img, imgSm, category, occasion?, badge?, standIn?}.
    Coach borderless portrait tile (docs/REFERENCES.md move 2): 4:5 image,
    radius on the image mask only, no card border/shadow, DM Sans 600 name.
-   price null renders "Ask for price" + an underlined "Request similar"
-   WhatsApp link instead of an Add control. */
+   price null renders "Ask for price" + a "Request similar" WhatsApp pill
+   instead of the "Add to cart" pill. Optional focus ("x% y%") becomes the
+   image object-position so floor and shelves stay out of the 4:5 crop. */
 function productCardHTML(p) {
   const name = escapeHtml(p.name);
   const badge = p.badge
@@ -419,18 +423,19 @@ function productCardHTML(p) {
     : "";
   const subtitle = p.subtitle ? `<p class="product-card__subtitle">${escapeHtml(p.subtitle)}</p>` : "";
   const img = p.imgSm || p.img;
+  const focusStyle = p.focus ? ` style="object-position:${escapeHtml(p.focus)}"` : "";
 
   const priceBlock =
     p.price == null
       ? `<span class="product-card__ask">Ask for price</span>
-         <a class="product-card__request" href="${requestSimilarUrl(p.name)}" target="_blank" rel="noopener">Request similar</a>`
+         <a class="product-card__request" href="${requestSimilarUrl(p.name)}" target="_blank" rel="noopener">${WHATSAPP_GLYPH}<span>Request similar</span></a>`
       : `<span class="product-card__price">${fmtUGX(p.price)}</span>
-         <button type="button" class="add-btn" data-add-to-cart="${p.id}" aria-label="Add ${name} to cart">+</button>`;
+         <button type="button" class="add-btn" data-add-to-cart="${p.id}" aria-label="Add ${name} to cart">Add to cart</button>`;
 
   return `
     <article class="product-card reveal" data-id="${p.id}" data-category="${p.category}"${p.occasion ? ` data-occasion="${p.occasion}"` : ""}>
       <div class="product-card__frame">
-        <img src="${img}" alt="${name}" loading="lazy" width="320" height="400">
+        <img src="${img}" alt="${name}" loading="lazy" width="320" height="400"${focusStyle}>
         ${badge}
       </div>
       <h3 class="product-card__name">${name}</h3>
@@ -461,7 +466,7 @@ function renderProductGrids() {
 }
 
 /* ---------- Shop filter chips ----------------------------------------------
-   Two top-level toggles (Bouquets, Occasions, aria-pressed). Occasions
+   An All chip (selected by default) plus two top-level toggles (Bouquets, Occasions, aria-pressed). Occasions
    reveals Birthday/Sympathy sub-chips. Any chip with zero matching products
    is hidden at init (ASTRA "only populated choices appear") rather than
    just disabled, so it never appears as a dead control. */
@@ -486,6 +491,7 @@ function initShopFilters() {
   const hasBirthday = catalog.some((p) => p.category === "occasions" && p.occasion === "birthday");
   const hasSympathy = catalog.some((p) => p.category === "occasions" && p.occasion === "sympathy");
 
+  const allBtn = root.querySelector("[data-filter-all]");
   const bouquetsBtn = root.querySelector('[data-filter-category="bouquets"]');
   const occasionsBtn = root.querySelector('[data-filter-category="occasions"]');
   const subRow = root.querySelector("[data-occasion-chips]");
@@ -522,6 +528,18 @@ function initShopFilters() {
     } else if (empty) {
       empty.remove();
     }
+    if (allBtn) allBtn.setAttribute("aria-pressed", String(!category && !occasion));
+  }
+
+  if (allBtn) {
+    allBtn.addEventListener("click", () => {
+      category = null;
+      occasion = null;
+      [bouquetsBtn, occasionsBtn, birthdayBtn, sympathyBtn].forEach((b) => b && b.setAttribute("aria-pressed", "false"));
+      if (occasionsBtn) occasionsBtn.setAttribute("aria-expanded", "false");
+      if (subRow) subRow.hidden = true;
+      apply();
+    });
   }
 
   if (bouquetsBtn) {

@@ -6,7 +6,7 @@
   font-size: var(--text-caption);
   letter-spacing: .16em;
   text-transform: uppercase;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-2);
 }
 
 .gallery-grid {
@@ -27,11 +27,18 @@
   background: var(--blush);
 }
 
-.gallery-tile--portrait { aspect-ratio: 3 / 4; }
-.gallery-tile--square { aspect-ratio: 1 / 1; }
+.gallery-tile { aspect-ratio: 3 / 4; }
 
 @media (max-width: 899px) {
-  .gallery-tile--wide { grid-column: span 2; aspect-ratio: 16 / 10; }
+  .gallery-tile:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - var(--space-4) / 2);
+    justify-self: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery-tile:last-child:nth-child(3n + 1) { grid-column: 2; }
 }
 
 .gallery-tile img {

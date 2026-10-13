@@ -11,8 +11,9 @@ const PRODUCTS = [
     subtitle: "Large",
     price: 200000,
     unit: "bouquet",
-    img: "assets/media/photos/eok-photo-05.webp",
-    imgSm: "assets/media/photos/eok-photo-05-sm.webp",
+    img: "assets/media/photos/eok-photo-05-crop.webp",
+    imgSm: "assets/media/photos/eok-photo-05-crop-sm.webp",
+    focus: "50% 40%",
     category: "bouquets"
   },
 
@@ -36,6 +37,7 @@ const PRODUCTS = [
     unit: "bouquet",
     img: "assets/media/photos/eok-photo-03.webp",
     imgSm: "assets/media/photos/eok-photo-03-sm.webp",
+    focus: "50% 0%",
     category: "occasions",
     occasion: "sympathy",
     standIn: true
@@ -48,6 +50,7 @@ const PRODUCTS = [
     unit: "bouquet",
     img: "assets/media/photos/eok-photo-06.webp",
     imgSm: "assets/media/photos/eok-photo-06-sm.webp",
+    focus: "50% 70%",
     category: "occasions",
     occasion: "sympathy",
     standIn: true
@@ -60,6 +63,7 @@ const PRODUCTS = [
     unit: "bouquet",
     img: "assets/media/photos/eok-photo-08.webp",
     imgSm: "assets/media/photos/eok-photo-08-sm.webp",
+    focus: "50% 100%",
     category: "bouquets",
     standIn: true
   },
@@ -82,6 +86,7 @@ const PRODUCTS = [
     unit: "bouquet",
     img: "assets/media/photos/eok-photo-11.webp",
     imgSm: "assets/media/photos/eok-photo-11-sm.webp",
+    focus: "65% 50%",
     category: "occasions",
     occasion: "birthday",
     standIn: true
@@ -94,6 +99,7 @@ const PRODUCTS = [
     unit: "bouquet",
     img: "assets/media/photos/eok-photo-12.webp",
     imgSm: "assets/media/photos/eok-photo-12-sm.webp",
+    focus: "58% 50%",
     category: "bouquets",
     standIn: true
   },
@@ -105,6 +111,7 @@ const PRODUCTS = [
     unit: "bouquet",
     img: "assets/media/photos/eok-photo-20.webp",
     imgSm: "assets/media/photos/eok-photo-20-sm.webp",
+    focus: "50% 100%",
     category: "occasions",
     occasion: "birthday",
     standIn: true
@@ -128,6 +135,7 @@ const PRODUCTS = [
     unit: "bouquet",
     img: "assets/media/photos/eok-photo-22.webp",
     imgSm: "assets/media/photos/eok-photo-22-sm.webp",
+    focus: "50% 80%",
     category: "occasions",
     occasion: "birthday",
     standIn: true

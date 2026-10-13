@@ -35,10 +35,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Meow+Script&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/styles.css?v=12">
-<link rel="stylesheet" href="css/ribbon.css?v=8">
-<link rel="stylesheet" href="css/footer-petals.css?v=7">
-<link rel="stylesheet" href="css/home.css?v=7">
+<link rel="stylesheet" href="css/styles.css?v=13">
+<link rel="stylesheet" href="css/ribbon.css?v=13">
+<link rel="stylesheet" href="css/footer-petals.css?v=13">
+<link rel="stylesheet" href="css/home.css?v=13">
 <script>
   /* First page view this session: show the bouquet loading screen (main.js lifts it).
      The 9s timeout is a failsafe so a broken main.js can never trap the page. */
@@ -110,7 +110,7 @@
         <p class="hero-body">Bouquets for the people on your mind, delivered across Kampala the same day.</p>
         <div class="hero-cta">
           <a class="btn btn-pill" href="shop.html">Shop bouquets</a>
-          <a class="hero-link" href="https://wa.me/256778371038" target="_blank" rel="noopener">Ask Ndikora</a>
+          <a class="hero-link" href="https://wa.me/256778371038" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.2-.2-.5-.3ZM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>Ask Ndikora</a>
         </div>
       </div>
     </section>
@@ -131,9 +131,11 @@
       <div class="container tiles-section__layout">
         <div class="tiles-section__intro reveal">
           <p class="tiles-section__blurb">Each bouquet is arranged fresh to order, never pulled from a cooler.</p>
-          <a class="tiles-section__link" href="shop.html">Shop all bouquets</a>
         </div>
-        <div class="product-grid tiles-section__grid reveal-stagger" data-product-grid data-ids="red-rose-large,deep-pink-rose,blush-pink-rose,red-white-rose-box,orange-rose,white-garden-rose"></div>
+        <div class="product-grid tiles-section__grid reveal-stagger" data-product-grid data-ids="red-rose-large,blush-pink-rose,white-garden-rose"></div>
+        <div class="home-cta reveal">
+          <a class="btn btn-pill" href="shop.html">Shop all bouquets</a>
+        </div>
       </div>
     </section>
 
@@ -144,7 +146,7 @@
         <div class="why-choose__layout">
           <div class="why-choose__photo reveal">
             <figure class="ribbon-frame" data-ribbon-frame="a">
-              <img src="assets/media/photos/eok-photo-09-sm.webp" srcset="assets/media/photos/eok-photo-09-sm.webp 480w, assets/media/photos/eok-photo-09.webp 1170w" sizes="(min-width: 1024px) 340px, 70vw" alt="Cream roses tied with a black ribbon." width="480" height="640" loading="lazy" decoding="async">
+              <img src="assets/media/photos/eok-photo-09-sm.webp" srcset="assets/media/photos/eok-photo-09-sm.webp 480w, assets/media/photos/eok-photo-09.webp 1170w" sizes="(min-width: 1024px) 340px, 220px" alt="Cream roses tied with a black ribbon." width="480" height="640" loading="lazy" decoding="async">
             </figure>
           </div>
           <div class="why-choose__grid reveal-stagger">
@@ -175,13 +177,12 @@
 
     <!-- ============================== SIGNATURE BOUQUETS ============================== -->
     <section class="section signature">
-      <div class="container">
-        <div class="signature__intro reveal">
-          <h2>Signature bouquets</h2>
-          <p>Six of Ndikora&rsquo;s favourite combinations, ready to recreate for your own bouquet.</p>
-        </div>
-
-        <div class="signature__layout">
+      <div class="container signature__layout">
+        <div class="signature__head">
+          <div class="signature__intro reveal">
+            <h2>Signature bouquets</h2>
+            <p>Three of Ndikora&rsquo;s favourite combinations, ready to recreate for your own bouquet.</p>
+          </div>
           <ul class="botanical-list reveal">
             <li>Roses</li>
             <li>Carnations</li>
@@ -193,39 +194,28 @@
             <li>Lilies</li>
             <li>Daisies</li>
           </ul>
+        </div>
 
-          <div class="signature-tiles reveal-stagger">
-            <a class="signature-tile" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20deep%20wine%20roses%20wrapped%20in%20black%20and%20gold." target="_blank" rel="noopener">
-              <span class="signature-tile__frame"><img src="assets/media/photos/eok-photo-18-sm.webp" alt="Dense red rose bouquet in dark wrap." width="480" height="600" loading="lazy" decoding="async"></span>
-              <span class="signature-tile__caption">Deep wine roses, wrapped in black and gold.</span>
-              <span class="signature-tile__cta">Request similar</span>
-            </a>
-            <a class="signature-tile" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20ivory%20roses%20in%20soft%20white%20wrapping." target="_blank" rel="noopener">
-              <span class="signature-tile__frame"><img src="assets/media/photos/eok-photo-03-sm.webp" alt="Ivory roses, tightly packed, wrapped in white." width="480" height="600" loading="lazy" decoding="async"></span>
-              <span class="signature-tile__caption">Ivory roses in soft white wrapping.</span>
-              <span class="signature-tile__cta">Request similar</span>
-            </a>
-            <a class="signature-tile" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20purple%20statice%2C%20dense%20and%20full." target="_blank" rel="noopener">
-              <span class="signature-tile__frame"><img src="assets/media/photos/eok-photo-20-sm.webp" alt="Bright mixed bouquet of pink, purple and green." width="480" height="600" loading="lazy" decoding="async"></span>
-              <span class="signature-tile__caption">Purple statice, dense and full.</span>
-              <span class="signature-tile__cta">Request similar</span>
-            </a>
-            <a class="signature-tile" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20sunset%20roses%20in%20pink%2C%20yellow%20and%20orange." target="_blank" rel="noopener">
-              <span class="signature-tile__frame"><img src="assets/media/photos/eok-photo-24-sm.webp" alt="Yellow, pink and orange roses, birthday ribbon." width="480" height="600" loading="lazy" decoding="async"></span>
-              <span class="signature-tile__caption">Sunset roses in pink, yellow and orange.</span>
-              <span class="signature-tile__cta">Request similar</span>
-            </a>
-            <a class="signature-tile" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20red%20roses%20with%20baby's%20breath." target="_blank" rel="noopener">
-              <span class="signature-tile__frame"><img src="assets/media/photos/eok-photo-12-sm.webp" alt="Red roses filled out with baby's breath." width="480" height="600" loading="lazy" decoding="async"></span>
-              <span class="signature-tile__caption">Red roses with baby&rsquo;s breath.</span>
-              <span class="signature-tile__cta">Request similar</span>
-            </a>
-            <a class="signature-tile" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20daisies%20and%20statice%20in%20purple%20and%20yellow." target="_blank" rel="noopener">
-              <span class="signature-tile__frame"><img src="assets/media/photos/eok-photo-23-sm.webp" alt="Purple, yellow and green mums in red wrap." width="480" height="600" loading="lazy" decoding="async"></span>
-              <span class="signature-tile__caption">Daisies and statice in purple and yellow.</span>
-              <span class="signature-tile__cta">Request similar</span>
-            </a>
-          </div>
+        <div class="signature-tiles reveal-stagger">
+          <article class="signature-tile">
+            <div class="signature-tile__frame"><img src="assets/media/photos/eok-photo-20-sm.webp" alt="Bright mixed bouquet of pink, purple and green." width="480" height="600" loading="lazy" decoding="async"></div>
+            <p class="signature-tile__caption" id="signature-caption-1">Purple statice, dense and full.</p>
+            <a class="product-card__request" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20purple%20statice%2C%20dense%20and%20full." target="_blank" rel="noopener" aria-describedby="signature-caption-1">Request similar</a>
+          </article>
+          <article class="signature-tile">
+            <div class="signature-tile__frame"><img src="assets/media/photos/eok-photo-24-sm.webp" alt="Yellow, pink and orange roses, birthday ribbon." width="480" height="600" loading="lazy" decoding="async"></div>
+            <p class="signature-tile__caption" id="signature-caption-2">Sunset roses in pink, yellow and orange.</p>
+            <a class="product-card__request" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20sunset%20roses%20in%20pink%2C%20yellow%20and%20orange." target="_blank" rel="noopener" aria-describedby="signature-caption-2">Request similar</a>
+          </article>
+          <article class="signature-tile">
+            <div class="signature-tile__frame"><img src="assets/media/photos/eok-photo-23-sm.webp" alt="Purple, yellow and green mums in red wrap." width="480" height="600" loading="lazy" decoding="async"></div>
+            <p class="signature-tile__caption" id="signature-caption-3">Daisies and statice in purple and yellow.</p>
+            <a class="product-card__request" href="https://wa.me/256778371038?text=Hi%20Eden%20of%20Kora%2C%20I%20would%20like%20something%20similar%20to%20your%20daisies%20and%20statice%20in%20purple%20and%20yellow." target="_blank" rel="noopener" aria-describedby="signature-caption-3">Request similar</a>
+          </article>
+        </div>
+
+        <div class="home-cta reveal">
+          <a class="btn home-cta__blush" href="gallery.html">View gallery</a>
         </div>
       </div>
     </section>
@@ -359,11 +349,11 @@
 
 </div>
 
-<script src="js/products.js?v=7" defer></script>
-<script src="js/main.js?v=11" defer></script>
-<script src="js/ribbon.js?v=10" defer></script>
-<script src="js/footer-petals.js?v=7" defer></script>
-<script src="js/lightbox.js?v=7" defer></script>
-<script src="js/home.js?v=7" defer></script>
+<script src="js/products.js?v=13" defer></script>
+<script src="js/main.js?v=13" defer></script>
+<script src="js/ribbon.js?v=13" defer></script>
+<script src="js/footer-petals.js?v=13" defer></script>
+<script src="js/lightbox.js?v=13" defer></script>
+<script src="js/home.js?v=13" defer></script>
 </body>
 </html>

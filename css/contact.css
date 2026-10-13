@@ -136,6 +136,28 @@
   line-height: 1.6;
 }
 
+@media (max-width: 719px) {
+  .contact-steps__grid { gap: calc(var(--space-4) + var(--space-1)); }
+  .contact-step {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    column-gap: var(--space-3);
+    align-items: start;
+    text-align: left;
+    padding: 0;
+  }
+  .contact-step__number {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    font-size: .9375rem;
+  }
+  .contact-step h3 { grid-column: 2; margin-bottom: var(--space-1); }
+  .contact-step p { grid-column: 2; }
+}
+
 .contact-form-section { padding-block: var(--section-y); }
 
 .contact-form-section__head {
