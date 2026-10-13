@@ -1,0 +1,119 @@
+/* Shop page. Tokens come from css/styles.css :root. */
+
+.shop-catalog { padding-block: var(--section-y); }
+
+.shop-filters { margin-bottom: var(--space-5); }
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+}
+
+.filter-row--sub {
+  margin-top: var(--space-3);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--forest);
+}
+
+.filter-row--sub[hidden] { display: none; }
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 20px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .875rem;
+  color: var(--ink);
+  background: var(--blush);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 20%, var(--white));
+  border-radius: var(--radius-pill);
+  transition: background var(--dur-standard) var(--ease), border-color var(--dur-standard) var(--ease), transform var(--dur-standard) var(--ease);
+}
+
+.filter-chip:hover {
+  background: color-mix(in srgb, var(--pink) 40%, var(--white));
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.filter-chip:active { transform: scale(.97); }
+
+.filter-chip[aria-pressed="true"] {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--on-accent);
+}
+
+.filter-chip[aria-pressed="true"]:hover {
+  background: color-mix(in srgb, var(--forest) 84%, var(--ink));
+  border-color: color-mix(in srgb, var(--forest) 84%, var(--ink));
+  color: var(--on-accent);
+}
+
+.filter-chip:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.filter-chip--sub { padding-inline: 16px; font-size: .8125rem; }
+.filter-chip[hidden] { display: none; }
+
+.shop-catalog__note {
+  margin: var(--space-5) auto 0;
+  max-width: 620px;
+  text-align: center;
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+.shop-noscript {
+  text-align: center;
+  color: var(--muted);
+  font-size: .9375rem;
+}
+
+.shop-noscript a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--rose);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.shop-noscript a:hover { text-decoration-thickness: 4px; }
+
+.wa-cta__inner {
+  max-width: 560px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.wa-cta__blossom {
+  width: 48px;
+  height: 48px;
+  stroke: var(--rose);
+  fill: none;
+  stroke-width: 1.4;
+}
+
+.wa-cta__text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.125rem, 2.2vw, 1.375rem);
+  color: var(--ink);
+  line-height: 1.5;
+  max-width: 460px;
+}
+
+.wa-cta .btn-wa svg { fill: var(--on-accent); }

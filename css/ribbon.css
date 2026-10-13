@@ -1,0 +1,104 @@
+/* Ribbon: the site signature. js/ribbon.js draws it to the element's width. */
+
+.ribbon-band {
+  --ribbon-face: var(--pink);
+  --ribbon-back: var(--pink);
+  --ribbon-ink: var(--ink);
+  position: relative;
+  pointer-events: none;
+}
+
+.ribbon-band--straddle {
+  margin-top: calc(var(--ribbon-h) * -0.86);
+  z-index: 3;
+}
+
+.ribbon-band--rose {
+  --ribbon-face: var(--pink);
+  --ribbon-back: var(--pink);
+  --ribbon-ink: var(--ink);
+}
+
+.ribbon-band__stage { height: var(--ribbon-h); }
+
+.ribbon-band__art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 6px 10px rgba(74, 28, 42, .2));
+}
+
+.ribbon-band__text {
+  font-family: var(--font-display);
+  fill: var(--ribbon-ink);
+  letter-spacing: .01em;
+}
+
+.ribbon-band__list {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2) var(--space-5);
+  font-family: var(--font-display);
+  font-size: var(--text-body);
+  color: var(--ribbon-ink);
+  background: var(--ribbon-face);
+}
+
+.ribbon-band.is-ready .ribbon-band__list {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.ribbon-frame {
+  --ribbon-face: var(--rose);
+  --ribbon-back: var(--pink);
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+}
+
+.ribbon-frame--b { aspect-ratio: 5 / 4; }
+
+.ribbon-frame--lime {
+  --ribbon-face: var(--rose);
+  --ribbon-back: var(--pink);
+}
+
+.ribbon-frame img {
+  position: absolute;
+  top: 6.8%;
+  left: 8.5%;
+  width: 83%;
+  height: 79.2%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  border-radius: 6px;
+}
+
+.ribbon-frame--b img {
+  top: 8.5%;
+  left: 6.8%;
+  width: 86.4%;
+  height: 74%;
+}
+
+.ribbon-frame__art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 5px 8px rgba(74, 28, 42, .22));
+}

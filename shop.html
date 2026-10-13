@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Bouquets & Occasion Flowers | Eden of Kora, Kampala</title>
+<meta name="description" content="Browse bouquets, birthday and sympathy arrangements from Eden of Kora. Fresh, locally grown flowers delivered same day across Kampala. Order yours on WhatsApp.">
+<link rel="canonical" href="https://theyloveshaka.github.io/eden-of-kora/shop.html">
+<meta property="og:title" content="Shop Bouquets & Occasion Flowers | Eden of Kora, Kampala">
+<meta property="og:description" content="Browse bouquets, birthday and sympathy arrangements from Eden of Kora. Fresh, locally grown flowers delivered same day across Kampala. Order yours on WhatsApp.">
+<meta property="og:image" content="https://theyloveshaka.github.io/eden-of-kora/assets/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theyloveshaka.github.io/eden-of-kora/shop.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shop Bouquets & Occasion Flowers | Eden of Kora, Kampala">
+<meta name="twitter:description" content="Browse bouquets, birthday and sympathy arrangements from Eden of Kora. Fresh, locally grown flowers delivered same day across Kampala. Order yours on WhatsApp.">
+<meta name="twitter:image" content="https://theyloveshaka.github.io/eden-of-kora/assets/media/hero/hero-poster.webp?v=2">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Meow+Script&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css?v=12">
+<link rel="stylesheet" href="css/ribbon.css?v=8">
+<link rel="stylesheet" href="css/footer-petals.css?v=7">
+<link rel="stylesheet" href="css/shop.css?v=7">
+<script>
+  /* First page view this session: show the bouquet loading screen (main.js lifts it).
+     The 9s timeout is a failsafe so a broken main.js can never trap the page. */
+  (function () {
+    try {
+      if (sessionStorage.getItem("loaderSeen") || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      document.documentElement.classList.add("is-loading");
+      new Image().src = "assets/bouquet-animation.svg";
+      setTimeout(function () { document.documentElement.classList.remove("is-loading"); }, 9000);
+    } catch (e) {}
+  })();
+</script>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<!-- ============================== LOADING SCREEN ============================== -->
+<div class="site-loader" aria-hidden="true">
+  <img class="site-loader__anim" data-src="assets/bouquet-animation.svg" alt="" width="806" height="818">
+  <p class="site-loader__caption">Arranging your flowers&hellip;</p>
+</div>
+
+<div class="page-panel">
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header site-header--over">
+
+    <a class="brand" href="index.html" aria-label="Eden of Kora, home">
+      <span class="brand-word">Eden of Kora</span>
+    </a>
+
+    <nav class="nav-pill" id="primary-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="shop.html" aria-current="page">Shop</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-pill btn-pill--sm" href="https://wa.me/256778371038" target="_blank" rel="noopener">Order Now</a>
+      <button class="icon-btn cart-btn" type="button" data-cart-open aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/>
+          <circle cx="9.5" cy="20.5" r="1.3"/><circle cx="17.5" cy="20.5" r="1.3"/>
+        </svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-haspopup="true" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================== HERO ============================== -->
+    <section class="page-hero" data-petals>
+      <img class="page-hero__media" src="assets/media/photos/eok-photo-01.webp" alt="" width="3024" height="4032" fetchpriority="high">
+      <div class="page-hero__copy">
+        <h1>Shop the Bouquets</h1>
+        <p class="page-hero__lead">Fresh bouquets and occasion flowers, made to order and delivered same day across Kampala.</p>
+      </div>
+    </section>
+
+    <!-- ============================== RIBBON BAND ============================== -->
+    <div class="ribbon-band ribbon-band--straddle" data-ribbon-band>
+      <ul class="ribbon-band__list">
+        <li>Kampala</li>
+        <li>Locally grown, always fresh</li>
+        <li>Wrapped in eco paper</li>
+        <li>Custom arrangements on request</li>
+        <li>Open daily, 9am&ndash;7pm</li>
+      </ul>
+    </div>
+
+    <!-- ============================== FILTERS + PRODUCT GRID ============================== -->
+    <section class="section shop-catalog">
+      <div class="container">
+        <div class="shop-filters" data-shop-filters>
+          <div class="filter-row" role="group" aria-label="Filter by type">
+            <button type="button" class="filter-chip" data-filter-category="bouquets" aria-pressed="false">Bouquets</button>
+            <button type="button" class="filter-chip" data-filter-category="occasions" aria-pressed="false" aria-expanded="false" aria-controls="occasion-subchips">Occasions</button>
+          </div>
+          <div class="filter-row filter-row--sub" id="occasion-subchips" data-occasion-chips hidden>
+            <button type="button" class="filter-chip filter-chip--sub" data-filter-occasion="birthday" aria-pressed="false">Birthday</button>
+            <button type="button" class="filter-chip filter-chip--sub" data-filter-occasion="sympathy" aria-pressed="false">Sympathy</button>
+          </div>
+        </div>
+
+        <div class="product-grid reveal-stagger" id="shop-grid" data-product-grid data-empty-message="Nothing here yet. Message Ndikora on WhatsApp and ask what's in stock.">
+          <p class="product-grid__skeleton" data-grid-skeleton>Loading flowers&hellip;</p>
+        </div>
+        <noscript><p class="shop-noscript">Turn on JavaScript to browse and add to cart, or <a href="https://wa.me/256778371038">message Eden of Kora on WhatsApp</a> to order.</p></noscript>
+
+        <p class="shop-catalog__note">Same-day delivery across Kampala; fee depends on your area. Pay first by MTN MoMo, Airtel Money, bank transfer or card before your order is confirmed. No cash on delivery.</p>
+      </div>
+    </section>
+
+    <!-- ============================== BOTTOM CTA, WHATSAPP HELP ============================== -->
+    <section class="section wa-cta bg-soft-band">
+      <div class="container">
+        <div class="wa-cta__inner reveal">
+          <svg class="wa-cta__blossom" viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M24 6c8 0 12 6.5 12 13 0 8-6 13-12 15-6-2-12-7-12-15C12 12.5 16 6 24 6Z"/>
+          </svg>
+          <p class="wa-cta__text">Don&rsquo;t see what you want? Message Ndikora on WhatsApp with your colours, size and budget for a custom arrangement.</p>
+          <a class="btn btn-wa" href="https://wa.me/256778371038?text=Hello%20Eden%20of%20Kora!%20I%27d%20like%20a%20custom%20arrangement." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.2-.2-.5-.3ZM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+            Chat with Eden of Kora
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <div class="footer-petals" data-footer-petals aria-hidden="true"></div>
+  <footer class="site-footer">
+    <div class="footer-social">
+    <a href="https://wa.me/256778371038" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.2-.2-.5-.3ZM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+    </a>
+    <a href="https://www.snapchat.com/add/ndikoraaa" target="_blank" rel="noopener" aria-label="Eden of Kora on Snapchat">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 9.74c-.32-1.6-1.26-3.08-2.65-4.07-.6-.42-1.14-.84-1.68-1.23-2.24-1.65-4.93-2.44-7.67-2.44-3.33 0-6.38 1.2-8.72 3.4-.65.63-1.23 1.3-1.73 2.02-.65 1.04-1.08 2.23-1.2 3.52 0 .06 0 .13.02.2.02.36.08.71.18 1.05.08.24.18.48.3.7.12.22.26.43.42.62.16.19.33.37.52.54.07.06.15.12.22.17l1.14.92c.27.22.55.42.85.6.12.07.25.13.37.2l.32.17c.25.12.48.27.7.43.22.16.42.34.6.53.18.2.33.4.46.61l.06.1c.08.14.15.3.2.46.04.15.07.3.08.46 0 .37-.09.73-.26 1.06l-.48.9c-.04.07-.08.14-.11.22-.08.18-.14.36-.17.55-.04.33.02.67.17.98.15.3.4.56.7.7.3.14.63.18.95.1.32-.07.6-.27.78-.54l1.04-1.54c.17-.25.36-.5.58-.72.22-.23.47-.43.74-.6l.36-.2.37-.18c.25-.1.5-.17.76-.2h.08c.26.03.51.1.76.2l.37.18.36.2c.27.17.52.37.74.6.22.22.41.47.58.72l1.04 1.54c.18.27.46.47.78.54.32.08.65.04.95-.1.3-.14.55-.4.7-.7.15-.31.21-.65.17-.98-.03-.19-.09-.37-.17-.55-.03-.08-.07-.15-.11-.22l-.48-.9c-.17-.33-.26-.69-.26-1.06 0-.16.04-.31.08-.46.05-.16.12-.32.2-.46l.06-.1c.13-.21.28-.41.46-.61.18-.19.38-.37.6-.53.22-.16.45-.31.7-.43l.32-.17c.12-.07.25-.13.37-.2.3-.18.58-.38.85-.6l1.14-.92c.07-.05.15-.11.22-.17.19-.17.36-.35.52-.54.16-.19.3-.4.42-.62.12-.22.22-.46.3-.7.1-.34.16-.69.18-1.05.02-.07.02-.14.02-.2-.12-1.29-.55-2.48-1.2-3.52Z" fill="currentColor"/></svg>
+    </a>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Eden of Kora.</p>
+  </footer>
+
+  <!-- ============================== CART DRAWER ============================== -->
+  <div class="cart-overlay" data-cart-close></div>
+  <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+    <div class="cart-drawer__head">
+      <h2 id="cart-drawer-title">Your Cart</h2>
+      <button type="button" class="cart-drawer__close" data-cart-close aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="sr-only" aria-live="polite" data-cart-live></div>
+
+    <div class="cart-drawer__body">
+      <div class="cart-drawer__items" data-cart-items></div>
+
+      <div class="cart-addons">
+        <h3 class="cart-addons__title">A Little Something Extra?</h3>
+        <div class="cart-addons__row" data-cart-addons></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer__totals">
+      <div class="cart-drawer__row">
+        <span>Items subtotal</span>
+        <span data-cart-subtotal>UGX 0</span>
+      </div>
+      <div class="cart-drawer__row cart-drawer__row--delivery">
+        <span>Delivery fee</span>
+        <span>Confirmed by area</span>
+      </div>
+      <p class="cart-drawer__totals-note">This is your items subtotal. The delivery fee is confirmed by area on WhatsApp before you pay, so it&rsquo;s not included yet.</p>
+    </div>
+
+    <div class="cart-drawer__actions">
+      <button type="button" class="btn btn-wa btn-block" data-wa-checkout>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.2-.2-.5-.3ZM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+        Send order on WhatsApp
+      </button>
+      <button type="button" class="btn btn-outline btn-block" data-copy-order>Copy order</button>
+    </div>
+    <p class="cart-drawer__note">Send order on WhatsApp opens a message with your items already filled in. Nothing sends until you press send yourself, and nothing is confirmed until Ndikora replies.</p>
+  </aside>
+
+</div>
+
+<script src="js/products.js?v=7" defer></script>
+<script src="js/main.js?v=11" defer></script>
+<script src="js/ribbon.js?v=10" defer></script>
+<script src="js/footer-petals.js?v=7" defer></script>
+</body>
+</html>
